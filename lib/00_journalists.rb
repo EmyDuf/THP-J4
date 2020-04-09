@@ -52,7 +52,7 @@ Un peu de rangement à présent"
 
     #9. Quelle est la position dans l'array de la personne @epenser ?
     def index(twitter)
-        puts  "  -  @epenser est en " + twitter.index(twitter.find { |s| s.owner == myself}) + " position dans la liste filtrée"
+        puts  "  - @epenser est en " + twitter.index { |s| s == "@epenser"}.to_s + " position dans la liste filtrée"
     end
 
 def perform
