@@ -11,10 +11,14 @@
     
     #2. Combien d'handle contiennent un numéro ?
     def h_num(twitter)       
-        puts  "Dont " + twitter.count { |s| s.match? /\d/ }.to_s + " contenant un numéro." 
+        puts  "  - Dont " + twitter.count { |s| s.match? /\d/ }.to_s + " contenant un numéro." 
     end
     
     #Combien d'handle contiennent les 4 lettres du prénom "Aude" à la suite (sans prendre en compte les majuscules) ?
+    def aude(twitter)       
+        #puts  "  - Dont " + twitter.count { |s| s.match? ("aude") }.to_s + " contenant le prénom Aude, dans toutes ses formes." 
+        puts  "  - Dont " + twitter.count { |s| s.match? /[A][U][D][E]/i }.to_s + " contenant le prénom Aude, dans toutes ses formes."
+    end
 
     #Combien commencent par une majuscule (première lettre juste après le @) ?
 
@@ -32,6 +36,7 @@
 def perform
     count1 = nb_j(twitter)
     count2 = h_num(twitter)
+    count3 = aude(twitter)
 
 end
 
