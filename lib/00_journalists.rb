@@ -11,13 +11,7 @@
     
     #2. Combien d'handle contiennent un numéro ?
     def h_num(twitter)       
-        i=0
-        twitter.each do |test|
-            if test =~ /\d/
-                i+=1
-            end
-        end
-        puts "Dont #{i} contenant un numéro." 
+        puts  "Dont " + twitter.count { |s| s.match? /\d/ }.to_s + " contenant un numéro." 
     end
     
     #Combien d'handle contiennent les 4 lettres du prénom "Aude" à la suite (sans prendre en compte les majuscules) ?
