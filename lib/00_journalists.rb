@@ -14,29 +14,45 @@
         puts  "  - Dont " + twitter.count { |s| s.match? /\d/ }.to_s + " contenant un numéro." 
     end
     
-    #Combien d'handle contiennent les 4 lettres du prénom "Aude" à la suite (sans prendre en compte les majuscules) ?
+    #3. Combien d'handle contiennent les 4 lettres du prénom "Aude" à la suite (sans prendre en compte les majuscules) ?
     def aude(twitter)       
         #puts  "  - Dont " + twitter.count { |s| s.match? ("aude") }.to_s + " contenant le prénom Aude, dans toutes ses formes." 
         puts  "  - Dont " + twitter.count { |s| s.match? /[A][U][D][E]/i }.to_s + " contenant le prénom Aude, dans toutes ses formes."
     end
 
-    #Combien commencent par une majuscule (première lettre juste après le @) ?
+    #4. Combien commencent par une majuscule (première lettre juste après le @) ?
+    def start_maj(twitter)       
+        puts  "  - Dont " + twitter.count { |s| s.match? /\A@[A-Z]/i }.to_s + " qui commencent par une majuscule." #Autre méthode avec ^ pour le début et $ pour la fin
+    end
 
-    #Combien contiennent au moins une majuscule ?
+    #5. Combien contiennent au moins une majuscule ?
+    def maj(twitter)       
+        puts  "  - Dont " + twitter.count { |s| s.match? /[A-Z]/i }.to_s + " contenant une majuscule."
+    end
 
-    #Combien y a-t-il de underscore _ dans tous les pseudos confondus ?
+    #6. Combien y a-t-il de underscore _ dans tous les pseudos confondus ?
+    def underscore(twitter)       
+        puts  "  - Dont " + twitter.count { |s| s.match? /["_"]/i }.to_s + " contenant un underscore."
+    end
 
-    #Trie la liste de handle par ordre alphabétique.
+    #7. Trie la liste de handle par ordre alphabétique.
+    def order(twitter)       
+        puts  "Un peu de rangement à présent" + twitter.sort{|x,y| [x.attribut_pour_trier, x.attribut_pour_trier_cas_egalite] <=> [y.attribut_pour_trier, y.attribut_pour_trier_cas_egalite]} + " contenant un underscore."
+    end
+    #8. Quels sont les 50 handles les plus courts de ce array ?
 
-    #Quels sont les 50 handles les plus courts de ce array ?
-
-    #Quelle est la position dans l'array de la personne @epenser ?
+    #9. Quelle est la position dans l'array de la personne @epenser ?
 
 
 def perform
     count1 = nb_j(twitter)
     count2 = h_num(twitter)
     count3 = aude(twitter)
+    count4 = start_maj(twitter)
+    count5 = maj(twitter)
+    count6 = underscore(twitter)
+    count7 = order(twitter)
+
 
 end
 
