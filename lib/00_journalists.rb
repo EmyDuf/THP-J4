@@ -36,10 +36,17 @@
     end
 
     #7. Trie la liste de handle par ordre alphabétique.
-    def order(twitter)       
-        puts  "Un peu de rangement à présent" + twitter.sort{|x,y| [x.attribut_pour_trier, x.attribut_pour_trier_cas_egalite] <=> [y.attribut_pour_trier, y.attribut_pour_trier_cas_egalite]} + " contenant un underscore."
+    def order(twitter)
+        twitter.sort! #!{|x,y| [x.attribut_pour_trier, x.attribut_pour_trier_cas_egalite] <=> [y.attribut_pour_trier, y.attribut_pour_trier_cas_egalite]} + " contenant un underscore."
+        puts  "
+Un peu de rangement à présent"
     end
+
     #8. Quels sont les 50 handles les plus courts de ce array ?
+    def order(twitter)
+        puts  "  - Voici les 50 plus courts d'entre eux :"
+        puts 
+    end
 
     #9. Quelle est la position dans l'array de la personne @epenser ?
 
