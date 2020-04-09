@@ -40,16 +40,20 @@
         twitter.sort! #!{|x,y| [x.attribut_pour_trier, x.attribut_pour_trier_cas_egalite] <=> [y.attribut_pour_trier, y.attribut_pour_trier_cas_egalite]} + " contenant un underscore."
         puts  "
 Un peu de rangement à présent"
+        #puts twitter
     end
 
     #8. Quels sont les 50 handles les plus courts de ce array ?
-    def order(twitter)
+    def long(twitter)
         puts  "  - Voici les 50 plus courts d'entre eux :"
-        puts 
+        twitter2 = twitter.sort_by{ |s| s.length} #!{|x,y| [x.attribut_pour_trier, x.attribut_pour_trier_cas_egalite] <=> [y.attribut_pour_trier, y.attribut_pour_trier_cas_egalite]} + " contenant un underscore."
+        #puts twitter2[0,50]
     end
 
     #9. Quelle est la position dans l'array de la personne @epenser ?
-
+    def index(twitter)
+        puts  "  -  @epenser est en " + twitter.index(twitter.find { |s| s.owner == myself}) + " position dans la liste filtrée"
+    end
 
 def perform
     count1 = nb_j(twitter)
@@ -59,6 +63,8 @@ def perform
     count5 = maj(twitter)
     count6 = underscore(twitter)
     count7 = order(twitter)
+    count7 = long(twitter)
+    count8 = index(twitter)
 
 
 end
