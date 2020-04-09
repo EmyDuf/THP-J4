@@ -23,12 +23,17 @@ def bigger(my_hash)
 end
 
 # 2. La ou les crypto qui ont la plus petite valeur.
+def smaller(my_hash)
+    puts "La plus petite valeur de crypto est :" + my_hash[1].sort_by{ |s| s.length}
+end
+
 # 3. Le nombre de crypto contenant le mot "coin".
 # 4. Les devises, dont le cours est inférieur à 6000 (Indice : on peut comparer en valeur 2 integers mais pas 2 strings. Pense bien à enlever le $ et éventuellement utiliser .to_i pour faire cet exercice).
 # 5. La devise la plus chère parmi celles dont le cours est inférieur à 6000.
 
 def perform
     count1 = bigger(my_hash)
+    count2 = smaller(my_hash)
 end
 
 perform
